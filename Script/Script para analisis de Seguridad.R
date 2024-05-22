@@ -19,7 +19,7 @@ library(pastecs)
 install.packages("plotly")
 
 #Importacion de Excel
-datos <- read_excel("C:/Icesi/Semestre5/Inferencia/Proyecto Final/Datos filtrados, sin babosadas.xlsx")
+datos <- read_excel("C:/Icesi/Semestre5/Inferencia/Proyecto Final/Infrencia/Docs/Datos filtrados, sin babosadas.xlsx")
 View(datos)
 attach(datos)
 
@@ -71,5 +71,39 @@ ggplot(robos_genero , aes(x = `Pregunta 8`, y = frec_abs, label = paste0(frec_ab
 result <- prop.test(table(datos$`Pregunta 5`), p = 0.4, alternative = "greater")
 
 result
+
+alpha <- 0.1
+if (result$p.value < alpha) {
+  cat("El valor p es menor que alpha. Se rechaza H0.\n")
+} else {
+  cat("El valor p no es menor que alpha. No se rechaza H0.\n")
+}
+
+
+#5.2 Para comparar la proporción de hombres y mujeres que han sido víctimas de inseguridad dentro de la universidad. 
+
+result2 <-
+
+
+#5.3 Para comparar la cantidad de veces por persona que ha sido vulnerada dentro de la universidad ICESI.
+
+result3 <- t.test(`Pregunta 4`, mu = 2, alternative = "greater")
+  
+print(result3)
+
+alpha <- 0.1
+if (result$p.value < alpha) {
+  cat("El valor p es menor que alpha. Se rechaza H0.\n")
+} else {
+  cat("El valor p no es menor que alpha. No se rechaza H0.\n")
+}
+
+
+#5.4 Para comparar el promedio de veces que son víctimas de robo los hombres y el promedio de veces que son víctimas de robo las mujeres.
+
+
+result4 <-
+
+
 
 
